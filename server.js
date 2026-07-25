@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
-const port = process.env.PORT || 4394;
+const port = process.env.PORT || 4395;
 const bundledStyles = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 const bundledApp = fs.readFileSync(path.join(root, "app.js"), "utf8");
 const routes = {
