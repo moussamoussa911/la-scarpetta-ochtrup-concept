@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#151b17">
+  <meta name="description" content="Reservieren Sie Ihren Tisch bei La Scarpetta Ochtrup – intelligent, schnell und persönlich.">
+  <title>Reservieren · La Scarpetta Ochtrup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+</head>
+<body data-page="booking">
+  <a class="skip-link" href="#content">Zum Inhalt</a><div data-site-header></div>
+  <main id="content">
+    <section class="booking-hero">
+      <div class="booking-hero-copy">
+        <div class="eyebrow light"><span class="section-number">03</span><span data-i18n="booking.eyebrow">Prenota il tuo tavolo</span></div>
+        <h1><span data-i18n="booking.title1">Ihr Abend.</span><br><em data-i18n="booking.title2">Perfekt geplant.</em></h1>
+        <p data-i18n="booking.text">Vier kurze Schritte. Ein Tisch, der zu Ihrem Abend passt.</p>
+      </div>
+      <div class="booking-live">
+        <span class="live-dot"></span>
+        <div><small data-i18n="booking.today">Heute</small><strong data-open-status>Heute geöffnet</strong><p data-i18n="booking.hours">Di–Mi 16:30–22:00 · Do–So 11:30–22:00</p></div>
+      </div>
+    </section>
+
+    <section class="booking-shell">
+      <nav class="booking-progress" aria-label="Reservierungsschritte">
+        <button type="button" class="active" data-booking-nav="1"><span>01</span><b data-i18n="booking.step1">Datum</b><small data-booking-summary="1" data-i18n="booking.chooseDate">Datum wählen</small></button>
+        <button type="button" data-booking-nav="2"><span>02</span><b data-i18n="booking.step2">Gäste & Platz</b><small data-booking-summary="2" data-i18n="booking.chooseGuests">Runde wählen</small></button>
+        <button type="button" data-booking-nav="3"><span>03</span><b data-i18n="booking.step3">Uhrzeit</b><small data-booking-summary="3" data-i18n="booking.chooseTime">Zeit wählen</small></button>
+        <button type="button" data-booking-nav="4"><span>04</span><b data-i18n="booking.step4">Kontakt</b><small data-i18n="booking.yourDetails">Ihre Angaben</small></button>
+      </nav>
+
+      <form class="booking-form" data-booking-form>
+        <section class="booking-step active" data-booking-step="1">
+          <div class="step-heading"><span data-i18n="booking.stepOne">Schritt 1 von 4</span><h2 data-i18n="booking.whenTitle">Wann beginnt Ihr Italien-Abend?</h2><p data-i18n="booking.whenText">Montags ist Ruhetag. Die passenden Zeiten erscheinen später automatisch.</p></div>
+          <div class="calendar-wrap">
+            <div class="calendar-head"><button type="button" data-month-prev aria-label="Vorheriger Monat">←</button><h3 data-calendar-title></h3><button type="button" data-month-next aria-label="Nächster Monat">→</button></div>
+            <div class="calendar-week"><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span></div>
+            <div class="calendar-grid" data-calendar></div>
+            <div class="calendar-legend"><span><i class="available"></i><span data-i18n="booking.available">Verfügbar</span></span><span><i class="selected"></i><span data-i18n="booking.selected">Ausgewählt</span></span><span><i class="closed"></i><span data-i18n="booking.closedLegend">Ruhetag</span></span></div>
+          </div>
+          <div class="step-actions"><span></span><button class="button button-red" type="button" data-booking-next><span data-i18n="action.continue">Weiter</span><span>→</span></button></div>
+        </section>
+
+        <section class="booking-step" data-booking-step="2">
+          <div class="step-heading"><span data-i18n="booking.stepTwo">Schritt 2 von 4</span><h2 data-i18n="booking.partyTitle">Wer sitzt mit am Tisch?</h2><p data-i18n="booking.partyText">Wählen Sie Ihre Runde und den Bereich, der zu Ihrem Abend passt.</p></div>
+          <div class="party-layout">
+            <div>
+              <span class="field-label" data-i18n="booking.people">Anzahl Personen</span>
+              <div class="guest-visual">
+                <div class="guest-table"><span data-booking-guest-count>2</span><small data-i18n="table.guests">Personen</small></div>
+                <div class="guest-seats" data-guest-seats aria-hidden="true"></div>
+              </div>
+              <div class="booking-guest-grid" data-booking-guests></div>
+            </div>
+            <div>
+              <span class="field-label" data-i18n="booking.area">Wunschbereich</span>
+              <div class="area-grid">
+                <button type="button" data-area="restaurant"><span data-icon="restaurant"></span><b data-i18n="booking.areaRestaurant">Restaurant</b><small data-i18n="booking.areaRestaurantText">Modern & lebendig</small></button>
+                <button type="button" data-area="terrace"><span data-icon="leaf"></span><b data-i18n="booking.areaTerrace">Terrasse</b><small data-i18n="booking.areaTerraceText">Draußen genießen</small></button>
+                <button type="button" data-area="any"><span data-icon="spark"></span><b data-i18n="booking.areaAny">Überraschen Sie mich</b><small data-i18n="booking.areaAnyText">Der schönste freie Tisch</small></button>
+              </div>
+            </div>
+          </div>
+          <div class="large-party-note" data-large-party hidden><span data-icon="phone"></span><div><b data-i18n="booking.largeTitle">Eine große Tavolata?</b><p data-i18n="booking.largeText">Ab 9 Personen stimmen wir den perfekten Tisch gern persönlich mit Ihnen ab.</p></div><a href="tel:+4925539176930">02553 9176930</a></div>
+          <div class="step-actions"><button class="text-button" type="button" data-booking-back>← <span data-i18n="action.back">Zurück</span></button><button class="button button-red" type="button" data-booking-next><span data-i18n="action.continue">Weiter</span><span>→</span></button></div>
+        </section>
+
+        <section class="booking-step" data-booking-step="3">
+          <div class="step-heading"><span data-i18n="booking.stepThree">Schritt 3 von 4</span><h2 data-i18n="booking.timeTitle">Wann dürfen wir für Sie eindecken?</h2><p data-time-intro data-i18n="booking.timeText">Wir zeigen nur Zeiten, die zum gewählten Tag passen.</p></div>
+          <div class="daypart-switch" data-daypart-switch></div>
+          <div class="time-grid" data-time-grid></div>
+          <div class="availability-note"><span class="live-dot"></span><p data-i18n="booking.availabilityNote">Die Auslastung ist eine intelligente Konzeptvorschau. Eine finale Reservierung wird vom Restaurant bestätigt.</p></div>
+          <div class="step-actions"><button class="text-button" type="button" data-booking-back>← <span data-i18n="action.back">Zurück</span></button><button class="button button-red" type="button" data-booking-next><span data-i18n="action.continue">Weiter</span><span>→</span></button></div>
+        </section>
+
+        <section class="booking-step" data-booking-step="4">
+          <div class="step-heading"><span data-i18n="booking.stepFour">Schritt 4 von 4</span><h2 data-i18n="booking.contactTitle">Wie dürfen wir Sie begrüßen?</h2><p data-i18n="booking.contactText">Nur noch Ihre Kontaktdaten und alles ist vorbereitet.</p></div>
+          <div class="form-grid">
+            <label><span data-i18n="form.name">Name</span><input name="name" autocomplete="name" required></label>
+            <label><span data-i18n="form.phone">Telefon</span><input name="phone" type="tel" autocomplete="tel" required></label>
+            <label><span data-i18n="form.email">E-Mail</span><input name="email" type="email" autocomplete="email" required></label>
+            <label><span data-i18n="form.occasion">Anlass</span><select name="occasion"><option value="" data-i18n="form.none">Einfach genießen</option><option data-i18n="form.birthday">Geburtstag</option><option data-i18n="form.anniversary">Jahrestag</option><option data-i18n="form.business">Geschäftsessen</option><option data-i18n="form.celebration">Familienfeier</option></select></label>
+          </div>
+          <fieldset class="preference-field"><legend data-i18n="form.preferences">Dürfen wir etwas beachten?</legend><div class="preference-chips"><label><input type="checkbox" name="preference" value="vegetarian"><span data-icon="leaf"></span><b data-i18n="form.vegetarian">Vegetarisch</b></label><label><input type="checkbox" name="preference" value="vegan"><span data-icon="leaf"></span><b data-i18n="form.vegan">Vegan</b></label><label><input type="checkbox" name="preference" value="gluten"><span data-icon="wheat"></span><b data-i18n="form.gluten">Gluten beachten</b></label><label><input type="checkbox" name="preference" value="quiet"><span data-icon="spark"></span><b data-i18n="form.quiet">Ruhiger Tisch</b></label></div></fieldset>
+          <label class="note-field"><span data-i18n="form.note">Wünsche (optional)</span><textarea name="note" rows="4" data-i18n-placeholder="form.notePlaceholder" placeholder="Kinderstuhl, Allergien, besondere Wünsche …"></textarea></label>
+          <label class="consent"><input type="checkbox" required><span data-i18n="form.privacy">Ich stimme der Verarbeitung meiner Angaben zur Bearbeitung der Reservierungsanfrage zu.</span></label>
+          <p class="form-disclaimer" data-i18n="form.disclaimer">Dies ist eine unverbindliche Reservierungsanfrage. Ihr Tisch ist erst nach Bestätigung durch das Restaurant fest reserviert.</p>
+          <div class="step-actions"><button class="text-button" type="button" data-booking-back>← <span data-i18n="action.back">Zurück</span></button><button class="button button-red" type="submit"><span data-i18n="action.request">Anfrage vorbereiten</span><span>✓</span></button></div>
+        </section>
+      </form>
+
+      <aside class="booking-aside">
+        <div class="booking-summary-card">
+          <div class="summary-head"><span class="tricolore"></span><small data-i18n="booking.yourEvening">Ihr Abend bei La Scarpetta</small></div>
+          <div class="summary-date"><span data-summary-day>—</span><div><strong data-summary-date data-i18n="booking.notChosen">Noch nicht gewählt</strong><small data-summary-time>—</small></div></div>
+          <div class="summary-details"><div><span data-icon="people"></span><p><small data-i18n="table.guests">Personen</small><b data-summary-guests>2</b></p></div><div><span data-icon="restaurant"></span><p><small data-i18n="booking.area">Wunschbereich</small><b data-summary-area>—</b></p></div></div>
+          <div class="summary-menu" data-booking-table-summary></div>
+          <div class="summary-promise"><span data-icon="check"></span><p><b data-i18n="booking.promiseTitle">Persönlich bestätigt</b><small data-i18n="booking.promiseText">Das Restaurant prüft Ihre Anfrage und meldet sich bei Ihnen.</small></p></div>
+        </div>
+        <div class="booking-help"><span data-icon="phone"></span><div><small data-i18n="booking.help">Lieber persönlich?</small><a href="tel:+4925539176930">02553 9176930</a></div></div>
+      </aside>
+    </section>
+  </main>
+
+  <dialog class="booking-dialog" data-booking-dialog>
+    <button type="button" class="dialog-close" data-dialog-close aria-label="Schließen">×</button>
+    <span class="dialog-check">✓</span>
+    <div class="eyebrow" data-i18n="dialog.eyebrow">Grazie!</div>
+    <h2 data-i18n="dialog.title">Ihr Italien-Abend ist vorbereitet.</h2>
+    <p data-i18n="dialog.text">In der finalen Website wird diese Anfrage direkt an La Scarpetta übermittelt. In dieser Konzeptvorschau können Sie das Restaurant direkt anrufen.</p>
+    <div class="dialog-summary" data-dialog-summary></div>
+    <a class="button button-red" href="tel:+4925539176930"><span data-i18n="dialog.call">Jetzt anrufen</span><span>→</span></a>
+  </dialog>
+  <div data-site-footer></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#151b17">
+  <meta name="description" content="Die Speisekarte von La Scarpetta Ochtrup – Antipasti, Pasta, Pizza und italienische Klassiker.">
+  <title>Speisekarte · La Scarpetta Ochtrup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,400;6..96,500;6..96,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+</head>
+<body data-page="menu">
+  <a class="skip-link" href="#content">Zum Inhalt</a><div data-site-header></div>
+  <main id="content">
+    <section class="page-hero menu-hero">
+      <div class="page-hero-copy">
+        <div class="eyebrow light"><span class="section-number">02</span><span data-i18n="menu.eyebrow">La nostra carta</span></div>
+        <h1><span data-i18n="menu.title1">Italien lesen.</span><br><em data-i18n="menu.title2">Geschmack verstehen.</em></h1>
+        <p data-i18n="menu.intro">Originale Rezepte, ehrliche Zutaten und die Freiheit, den ganzen Tisch probieren zu lassen.</p>
+      </div>
+      <div class="page-hero-photo"><img src="/assets/images/food-13.jpg" width="800" height="1067" alt="Linguine mit Scampi bei La Scarpetta" fetchpriority="high"><span aria-hidden="true">BUON APPETITO</span></div>
+    </section>
+
+    <section class="menu-shell">
+      <div class="menu-toolbar">
+        <label class="menu-search"><span data-icon="search"></span><span class="sr-only" data-i18n="menu.searchLabel">Speisekarte durchsuchen</span><input id="menu-search" type="search" autocomplete="off" data-i18n-placeholder="menu.search" placeholder="Gericht oder Zutat suchen …"></label>
+        <button class="table-dock-button" type="button" data-open-table><span data-icon="plate"></span><span data-i18n="table.your">Ihre Tavolata</span><b data-table-count>0</b></button>
+      </div>
+      <div class="menu-categories-sticky"><nav class="menu-categories" aria-label="Menükategorien" data-menu-categories></nav></div>
+      <div class="menu-meta"><p><strong data-menu-results>0</strong> <span data-i18n="menu.results">Gerichte</span></p><p data-i18n="menu.addHint">Mit + direkt zu Ihrer Tavolata hinzufügen.</p></div>
+      <div class="menu-grid" data-menu-grid></div>
+      <p class="menu-note" data-i18n="menu.note">Alle Preise inklusive Mehrwertsteuer. Allergene und Zusatzstoffe erhalten Sie auf Anfrage beim Restaurant.</p>
+    </section>
+
+    <section class="table-builder section" id="tavolata">
+      <div class="table-visual">
+        <div class="italian-table">
+          <div class="table-cloth"></div>
+          <div class="table-plates" data-table-surface-items aria-live="polite"></div>
+          <div class="table-mark"><span>LA SCARPETTA</span><b data-table-total>0,00 €</b></div>
+        </div>
+      </div>
+      <div class="table-intro">
+        <div class="eyebrow"><span class="section-number">03</span><span data-i18n="table.plannerEyebrow">Der Tavolata-Planer</span></div>
+        <h2 data-i18n="table.plannerTitle">Was kommt in die Mitte?</h2>
+        <p data-i18n="table.plannerText">Wählen Sie Gerichte und Personen. Wir zeigen Ihnen sofort, was auf den Tisch kommt und was es pro Gast kostet.</p>
+        <div class="guest-stepper"><span data-i18n="table.guests">Personen</span><button type="button" data-guests-minus aria-label="Eine Person weniger">−</button><strong data-guests>2</strong><button type="button" data-guests-plus aria-label="Eine Person mehr">+</button></div>
+        <div class="table-preview" data-table-preview aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+  <div data-site-footer></div>
+  <aside class="table-drawer" data-table-drawer aria-hidden="true"><div data-table-panel></div></aside>
+  <div class="drawer-scrim" data-table-scrim></div>
+</body>
+</html>
