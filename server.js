@@ -3,7 +3,9 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
-const port = process.env.PORT || 4392;
+const port = process.env.PORT || 4394;
+const bundledStyles = fs.readFileSync(path.join(root, "styles.css"), "utf8");
+const bundledApp = fs.readFileSync(path.join(root, "app.js"), "utf8");
 const routes = {
   "/": "index.html",
   "/speisekarte": "speisekarte.html",
@@ -39,7 +41,24 @@ http.createServer((req, res) => {
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
   if (!fs.existsSync(file)) file = path.join(root, "404.html");
   const ext = path.extname(file).toLowerCase();
-  res.writeHead(file.endsWith("404.html") ? 404 : 200, {
+  const status = file.endsWith("404.html") ? 404 : 200;
+
+  if (ext === ".html") {
+    let html = fs.readFileSync(file, "utf8")
+      .replace(/<link rel="stylesheet" href="\/styles\.css">/g, () => `<style data-bundled-styles>${bundledStyles}</style>`)
+      .replace(/<script src="\/app\.js" defer><\/script>/g, "");
+    if (!file.endsWith("404.html")) {
+      html = html.replace("</body>", () => `<script data-bundled-app>${bundledApp}</script></body>`);
+    }
+    res.writeHead(status, {
+      "Content-Type": types[ext],
+      "Cache-Control": "no-store",
+      "Content-Length": Buffer.byteLength(html)
+    });
+    return res.end(html);
+  }
+
+  res.writeHead(status, {
     "Content-Type": types[ext] || "application/octet-stream",
     "Cache-Control": [".html", ".js", ".css"].includes(ext) ? "no-cache" : "public, max-age=86400"
   });
