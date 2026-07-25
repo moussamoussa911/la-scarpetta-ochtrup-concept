@@ -188,6 +188,15 @@ h1, h2, h3 { text-wrap: balance; }
 .table-dock-button { display: flex; min-height: 58px; align-items: center; gap: 12px; padding: 0 17px 0 23px; color: #fff; background: var(--forest); border: 0; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .table-dock-button svg { width: 21px; }
 .table-dock-button b { display: grid; min-width: 29px; height: 29px; place-items: center; color: var(--ink); background: var(--cream); border-radius: 50%; }
+.table-floating-button { position: fixed; z-index: 90; right: clamp(16px,2.2vw,30px); bottom: max(18px,env(safe-area-inset-bottom)); display: grid; width: 66px; height: 66px; place-items: center; color: #fff; background: rgba(21,27,23,.94); border: 1px solid rgba(241,213,158,.42); border-radius: 50%; box-shadow: 0 18px 45px rgba(7,11,8,.32),inset 0 0 0 5px rgba(255,255,255,.035); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); transition: opacity .25s,transform .25s,background .25s; animation: tableButtonIn .5s .25s both; }
+.table-floating-button::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(241,213,158,.18); border-radius: 50%; }
+.table-floating-button:hover { background: var(--tomato); transform: translateY(-3px); }
+.table-floating-button>span { display: grid; place-items: center; }
+.table-floating-button svg { width: 25px; height: 25px; }
+.table-floating-button b { position: absolute; top: -4px; right: -3px; display: grid; min-width: 24px; height: 24px; padding: 0 5px; place-items: center; color: #fff; background: var(--tomato); border: 2px solid var(--paper); border-radius: 999px; font-size: 9px; line-height: 1; }
+.table-open .table-floating-button { opacity: 0; pointer-events: none; transform: translateY(12px) scale(.9); }
+body[data-page="menu"] .site-toast { bottom: 100px; }
+@keyframes tableButtonIn { from { opacity: 0; transform: translateY(14px) scale(.88); } }
 .menu-categories-sticky { position: sticky; z-index: 40; top: 106px; margin: 0 calc(var(--pad)*-1) 22px; background: rgba(246,241,232,.94); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: 0 14px 35px rgba(21,27,23,.06); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
 .menu-categories { display: flex; gap: 10px; overflow-x: auto; padding: 12px var(--pad); overscroll-behavior-inline: contain; scrollbar-width: none; }
 .menu-categories::-webkit-scrollbar { display: none; }
@@ -590,6 +599,10 @@ h1, h2, h3 { text-wrap: balance; }
 
 @media (max-width: 540px) {
   .site-toast { right: 20px; bottom: 20px; }
+  body[data-page="menu"] .site-toast { bottom: 88px; }
+  .table-floating-button { right: 14px; bottom: max(14px,env(safe-area-inset-bottom)); width: 58px; height: 58px; }
+  .table-floating-button svg { width: 22px; height: 22px; }
+  .table-floating-button b { min-width: 22px; height: 22px; font-size: 8px; }
   body { font-size: 14px; }
   .site-header { right: 11px; left: 11px; height: 76px; padding: 0 9px 0 13px; }
   .site-header.scrolled { top: 8px; height: 70px; }

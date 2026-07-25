@@ -452,6 +452,7 @@
       else node.textContent = value;
     });
     $$("[data-i18n-placeholder]").forEach(node => node.placeholder = t(node.dataset.i18nPlaceholder));
+    $$("[data-i18n-aria]").forEach(node => node.setAttribute("aria-label", t(node.dataset.i18nAria)));
     $$("[data-lang]").forEach(button => {
       const active = button.dataset.lang === lang;
       button.classList.toggle("active", active);
